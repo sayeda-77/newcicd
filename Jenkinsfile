@@ -5,7 +5,7 @@ pipeline {
         // Define your environment variables here
         DOCKER_BFLASK_IMAGE = "sayeda77/mypython:${BUILD_NUMBER}"
         ROLLBACK_IMAGE = "sayeda77/mypython:previous"
-        DOCKER_REGISTRY_CREDS = 'sayeda77/dockerhub'
+        DOCKER_REGISTRY_CREDS = 'sayeda77/dckr_pat_F13jpaRykYu1_HuyWTKwpuhxjJI'
     }
 
     stages {
