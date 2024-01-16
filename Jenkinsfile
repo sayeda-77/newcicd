@@ -14,12 +14,14 @@ pipeline {
         sh 'docker tag my-flask $DOCKER_BFLASK_IMAGE'
       }
     }
-    stage('Test') {
-      steps {
-        // Introduce a fault in your application code or tests
-        // For example, modify a critical file or intentionally fail a test
-        sh 'docker run my-flask python -m pytest app/tests/'
-      }
+    stage('Unit Test') {
+            steps {
+                script {
+                    // Run unit tests (adjust as per your testing framework)
+                    sh "docker run mypycont:${BUILD_NUMBER} python -m unittest discover tests"
+                }
+            }
+        }
     }
     stage('Deploy') {
       steps {
@@ -53,4 +55,4 @@ pipeline {
       body: "Rollback to the previous version completed successfully."
     }
   }
-}
+
