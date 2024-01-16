@@ -5,7 +5,7 @@ pipeline {
         // Define your environment variables here
         DOCKER_BFLASK_IMAGE = "sayeda77/mypython:${BUILD_NUMBER}"
         ROLLBACK_IMAGE = "sayeda77/my-flask:previous"
-        DOCKER_REGISTRY_CREDS = 'sayeda77/Mushuadin@77'
+        DOCKER_REGISTRY_CREDS = 'sayeda77/Dockerhub'
     }
 
     stages {
