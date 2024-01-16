@@ -30,7 +30,7 @@ pipeline {
         }
       }
     }
-   /* stage('Rollback') {
+    stage('Rollback') {
       steps {
         // Rollback to the previous version
         sh "docker pull $ROLLBACK_IMAGE"
@@ -39,7 +39,7 @@ pipeline {
         // For example, restart the application, clear caches, etc.
       }
     }
-  }*/
+  }
 
   post {
     always {
@@ -53,5 +53,4 @@ pipeline {
       body: "Rollback to the previous version completed successfully."
     }
   }
-}
 }
