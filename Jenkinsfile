@@ -4,8 +4,8 @@ pipeline {
     environment {
         // Define your environment variables here
         DOCKER_BFLASK_IMAGE = "sayeda77/mypython:${BUILD_NUMBER}"
-        ROLLBACK_IMAGE = "my-flask:previous"
-        DOCKER_REGISTRY_CREDS = 'sayeda77/dckr_pat_F13jpaRykYu1_HuyWTKwpuhxjJI'
+        ROLLBACK_IMAGE = "sayeda77/my-flask:previous"
+        DOCKER_REGISTRY_CREDS = 'sayeda77/ dckr_pat_F13jpaRykYu1_HuyWTKwpuhxjJI'
     }
 
     stages {
@@ -35,7 +35,7 @@ pipeline {
             steps {
                 // Rollback to the previous version
                 sh "docker pull $ROLLBACK_IMAGE"
-                sh "docker tag $ROLLBACK_IMAGE my-flask"
+                sh "docker tag $ROLLBACK_IMAGE sayeda77my-flask:previous"
                 // You may need additional steps based on your deployment strategy
                 // For example, restart the application, clear caches, etc.
             }
